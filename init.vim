@@ -40,25 +40,9 @@ colorscheme gruvbox
 " Configurar activadores de snippets (opcional)
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<s-tab>'
+nnoremap <C-n> :NERDTreeToggle<CR>
 
-
-" Configurar activadores de snippets en coc.nvim
-autocmd FileType java imap <silent> <expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm()
-      \   : coc#expandableOrJumpable() ? '<C-r>=coc#rpc#request("doKeymap", ["snippets-expand-jump"])<CR>'
-      \   : "\<TAB>"
-
-" Atajos de teclado para activar los snippet en html
-autocmd FileType html imap <silent> <expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm()
-      \   : coc#expandableOrJumpable() ? '<C-r>=coc#rpc#request("doKeymap", ["snippets-expand-jump"])<CR>'
-      \   : "\<TAB>"
-
-
-autocmd FileType python imap <silent> <expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm()
-      \   : coc#expandableOrJumpable() ? '<C-r>=coc#rpc#request("doKeymap", ["snippets-expand-jump"])<CR>'
-      \   : "\<TAB>"
+inoremap <silent><expr> <TAB> pumvisible() ? coc#_select_confirm() : coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump'])\<CR>" : "\<TAB>"
 
 
 
